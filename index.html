@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet">
   <link href="stylesheet.css" rel="stylesheet">
   <link href="img/fav.png" rel="shortcut icon" type="image/png" >
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +26,7 @@
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
             Menu <i class="fa fa-bars"></i>
           </button>
-          <p class="light">Seto Seng</p>
+          <a href="#about"><p class="light">Setya Seng</p></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,7 +37,6 @@
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
 
@@ -49,8 +49,9 @@
         <div class="container">
           <div class="row">
               <div class="col-md-10 col-md-offset-1">
-                <h4 class="intro-text">My name is Seto<br>
-                  I'm a full-stacked developer monkey</p>
+                <img src="img/bg2.jpg" class="intropic">
+                <h4 class="intro-text">My name is Setya<br>
+                  I'm a full-stacked developer</p>
               </div>
             </div>
           </div>
@@ -60,13 +61,13 @@
     <section id="about" class="container content-section text-center about-section">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <img src="img/sponge.jpg" alt="A picture of me" width="30%" style="margin-top:30px">
+            <img class="profilePic" src="img/me.jpg" alt="A picture of me">
           <h2>About Me</h2>
           <div class="divider-header"></div>
           <div class="container">
             <div class="row">
               <div class= "col-md-8 col-md-offset-2">
-                <p></p>
+                <p>My name is Setya Seng.Before this I was working in a Donut Shop and found myself realizing that I’m not having the same passion and joy as I did when I was coding. I put down what I was doing and decided to pursue a career in web development.</p>
               </div>
             </div>
           </div>
@@ -80,6 +81,35 @@
           <h1>Portfolio</h1>
           <div class="divider-header"></div>
 
+          <div class="cards">
+            <div class="thumbnail">
+              <img src="img/Liquify_Front.png" alt="A screenshot of Liquify" width="100%">
+              <div class="caption">
+                <h3>Liquify</h3>
+                <p class="projectDetail">Liquify allows the user to track their water intake and meet the daily requirement </p>
+                <p><a href="https://liquify.sokhunseng.com/" target="_blank" class="btn btn-info" role="button">Demo</a> <a href="https://github.com/sososeng/Liquify" target="_blank" class="btn btn-default" role="button">GitHub</a></p>
+              </div>
+            </div>
+
+              <div class="thumbnail">
+                <img src="img/LOL_One.png" alt="A screenshot of Price Check AI" width="100%">
+                <div class="caption">
+                  <h3>Price Check AI</h3>
+                  <p class="projectDetail">A web app integrated with Google Actions to allow League of Legends players to look up the price of an item and its build path via voice command or text input </p>
+                  <p><a href="https://lol-price-check-ai.sokhunseng.com/" target="_blank" class="btn btn-info" role="button">Demo</a> <a href="https://github.com/sososeng/League_of_Legends_Price_Check" target="_blank" class="btn btn-default" role="button">GitHub</a></p>
+                </div>
+              </div>
+
+              <div class="thumbnail">
+                <img src="img/blog.jpg" alt="A Screenshot of Draw App" width="100%">
+                <div class="caption">
+                  <h3>Ramen Blog(Beta)</h3>
+                  <p class="projectDetail">A Ramen blog made using WordPress. Users can read and comment on posts</p>
+                  <p><a href="http://setyaseng.me" target="_blank" class="btn btn-info" role="button">Demo</a> </p>
+                </div>
+              </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -88,39 +118,35 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <h2>Skills</h2>
-          <div class="text-left">
-            <h4>What I know</h4>
-            <p>HTML</p>
-            <p>CSS</p>
-            <p>JavaScript</p>
-            <p>Node.JS</p>
+          <div class="skillContainer">
+            <div class="leftText">
+              <h3>What I know:</h3>
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>JavaScript</p>
+              <p>Node.JS</p>
+              <p>Express</p>
+              <p>Wordpress</p>
+              <p>ReactJS</p>
+            </div>
+            <div class="rightText">
+              <h3>What I'm learning:</h3>
+              <p>Sass</p>
+              <p>Magento</p>
+              <p>Adobe Illustrator</p>
+              <p></p>
+            </div>
           </div>
-          <div class="text-right">
-            <h4>What I'm learning</h4>
-            <p>React</p>
-            <p></p>
-            <p></p>
-          </div>
-
         </div>
       </div>
     </section>
 
-    <section class="container text-center resume-section">
+    <section id="resume" class="container text-center resume-section">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
           <h2>Resume</h2>
           <p></p>
-          <a href="" class="btn btn-default btn-lg">Dowload Resume</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="container content-section text-center contact-section">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <h2>Contact Me</h2>
-
+          <embed src="static/SetyaSeng.pdf" width="800px" height="1100px"/>
         </div>
       </div>
     </section>
@@ -128,7 +154,9 @@
 
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy;</p>
+            <a class="iconMargin" href="https://www.linkedin.com/in/setya-seng-214a79147/"><img src="img/linkedin.svg" width="30px" heigth="30px"></a>
+            <a href="https://github.com/setoseng"><img src="img/github.png" width="30px" height="30px"></a>
+            <p class="margining">setoseng@gmail.com</p>
         </div>
     </footer>
     <script
