@@ -162,7 +162,7 @@ a:hover,a:focus{
 }
 }
 footer {
-  min-height: 200px;
+  min-height: 20px;
 }
 .iconMargin{
   margin-right: 20px;
@@ -172,6 +172,9 @@ footer {
 }
 footer p {
   margin: 0;
+}
+.emailText{
+  font-size:20px;
 }
 @media(min-width:768px;){
   p{
