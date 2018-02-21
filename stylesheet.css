@@ -156,9 +156,11 @@ a:hover,a:focus{
 .cards{
   display:flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .thumbnail{
-  width:110em;
+  width:30em;
 }
 }
 footer {
