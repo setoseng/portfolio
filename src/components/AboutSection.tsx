@@ -1,0 +1,356 @@
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Award,
+  Calendar,
+  MapPin,
+  GraduationCap,
+  Briefcase,
+  Code,
+  Zap,
+  Shield,
+  Users,
+} from "lucide-react";
+
+interface AboutSectionProps {
+  isVisible: Record<string, boolean>;
+  education: Array<{
+    degree: string;
+    school: string;
+    year: string;
+    details: string;
+  }>;
+  experience: Array<{
+    company: string;
+    position: string;
+    duration: string;
+    location: string;
+    description: string;
+    achievements: string[];
+  }>;
+}
+
+const AboutSection: React.FC<AboutSectionProps> = ({
+  isVisible,
+  education,
+  experience,
+}) => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <section id="about" className="py-20 px-6 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <motion.div
+          className="text-center mb-20"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isVisible["about-title"] ? "visible" : "hidden"}
+        >
+          <motion.h2
+            className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight"
+            style={{ color: "#0551FA" }}
+            variants={itemVariants}
+          >
+            About Me
+          </motion.h2>
+          <motion.p
+            className="text-xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed"
+            variants={itemVariants}
+          >
+            Senior Software Engineer with over 5 years of experience delivering
+            robust, performant, and accessible full-stack applications using
+            React, Node.js, and modern technologies
+          </motion.p>
+        </motion.div>
+
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-20">
+          {/* Personal Story & Philosophy */}
+          <motion.div
+            className="lg:col-span-2 bg-white rounded-3xl p-8 shadow-lg"
+            variants={itemVariants}
+            initial="hidden"
+            animate={isVisible["about-content"] ? "visible" : "hidden"}
+          >
+            <div className="flex items-center mb-8">
+              <div
+                className="p-3 rounded-xl mr-4"
+                style={{ backgroundColor: "#E3F2FD" }}
+              >
+                <Users style={{ color: "#0551FA" }} size={24} />
+              </div>
+              <h3
+                className="text-3xl font-bold tracking-tight"
+                style={{ color: "#0551FA" }}
+              >
+                My Journey
+              </h3>
+            </div>
+
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <p className="text-lg">
+                I'm a Senior Software Engineer with a proven track record of
+                delivering exceptional user experiences and scalable solutions.
+                My journey in software development began with a passion for
+                creating intuitive interfaces that solve real-world problems.
+              </p>
+              <p className="text-lg">
+                Over the past 5+ years, I've specialized in React and modern
+                front-end technologies, working across diverse industries from
+                healthcare to e-commerce. I've proven ability to collaborate
+                across product, design, and engineering teams to build
+                component-based UI systems with a focus on scalability,
+                reusability, and user experience.
+              </p>
+              <p className="text-lg">
+                My experience spans from building real-time healthcare
+                applications to developing high-performance e-commerce
+                platforms. I thrive in fast-paced agile environments and have
+                extensive experience with AWS infrastructure, Figma-based design
+                systems, and leading UI architecture.
+              </p>
+            </div>
+
+            {/* Technical Philosophy */}
+            <div className="mt-10 pt-8 border-t border-gray-200">
+              <h4 className="text-2xl font-bold mb-6 text-gray-900">
+                Technical Philosophy
+              </h4>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  {
+                    icon: Code,
+                    text: "Component-based architecture for scalability and reusability",
+                  },
+                  {
+                    icon: Zap,
+                    text: "Performance optimization and accessibility as core principles",
+                  },
+                  {
+                    icon: Shield,
+                    text: "Robust, maintainable code with comprehensive testing",
+                  },
+                  {
+                    icon: Award,
+                    text: "User experience drives all technical decisions",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start p-4 rounded-lg bg-gray-50"
+                  >
+                    <item.icon
+                      className="mr-3 flex-shrink-0 mt-1"
+                      size={20}
+                      style={{ color: "#FAAE05" }}
+                    />
+                    <span className="text-gray-700 font-medium">
+                      {item.text}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Education & Skills Sidebar */}
+          <motion.div
+            className="space-y-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isVisible["about-visual"] ? "visible" : "hidden"}
+          >
+            {/* Education */}
+            <motion.div
+              className="bg-white rounded-3xl p-6 shadow-lg"
+              variants={itemVariants}
+            >
+              <div className="flex items-center mb-6">
+                <div
+                  className="p-2 rounded-lg mr-3"
+                  style={{ backgroundColor: "#FFF3E0" }}
+                >
+                  <GraduationCap style={{ color: "#FAAE05" }} size={20} />
+                </div>
+                <h4 className="text-xl font-bold" style={{ color: "#0551FA" }}>
+                  Education
+                </h4>
+              </div>
+              <div className="space-y-4">
+                {education.map((edu, index) => (
+                  <div
+                    key={index}
+                    className="border-l-4 pl-4 py-2"
+                    style={{ borderColor: "#FAAE05" }}
+                  >
+                    <h5 className="font-bold text-gray-900 text-sm">
+                      {edu.degree}
+                    </h5>
+                    <p className="font-medium text-gray-700 text-sm">
+                      {edu.school}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      {edu.year} • {edu.details}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Key Metrics */}
+            <motion.div
+              className="bg-white rounded-3xl p-6 shadow-lg"
+              variants={itemVariants}
+            >
+              <div className="flex items-center mb-6">
+                <div
+                  className="p-2 rounded-lg mr-3"
+                  style={{ backgroundColor: "#E3F2FD" }}
+                >
+                  <Zap style={{ color: "#0551FA" }} size={20} />
+                </div>
+                <h4 className="text-xl font-bold" style={{ color: "#0551FA" }}>
+                  Key Achievements
+                </h4>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: "Experience", value: "5+ Years", color: "#10B981" },
+                  { label: "Cost Reduction", value: "60%", color: "#F59E0B" },
+                  { label: "Engagement", value: "+18%", color: "#3B82F6" },
+                  { label: "Platforms", value: "4+ Built", color: "#8B5CF6" },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="text-center p-3 rounded-lg bg-gray-50"
+                  >
+                    <div
+                      className="text-2xl font-bold mb-1"
+                      style={{ color: item.color }}
+                    >
+                      {item.value}
+                    </div>
+                    <div className="text-gray-600 text-xs font-medium">
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Experience Section */}
+        <motion.div
+          className="bg-white rounded-3xl p-8 shadow-lg"
+          variants={itemVariants}
+          initial="hidden"
+          animate={isVisible["experience"] ? "visible" : "hidden"}
+        >
+          <div className="flex items-center mb-10">
+            <div
+              className="p-3 rounded-xl mr-4"
+              style={{ backgroundColor: "#FFF3E0" }}
+            >
+              <Briefcase style={{ color: "#FAAE05" }} size={24} />
+            </div>
+            <h3
+              className="text-3xl font-bold tracking-tight"
+              style={{ color: "#0551FA" }}
+            >
+              Professional Experience
+            </h3>
+          </div>
+
+          <div className="space-y-10">
+            {experience.map((exp, index) => (
+              <motion.div
+                key={index}
+                className="relative"
+                variants={itemVariants}
+                initial="hidden"
+                animate={
+                  isVisible[`experience-${index}`] ? "visible" : "hidden"
+                }
+              >
+                {/* Timeline connector */}
+                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+
+                <div className="relative pl-16">
+                  {/* Timeline dot */}
+                  <div
+                    className="absolute left-0 top-2 w-12 h-12 rounded-full border-4 border-white shadow-lg flex items-center justify-center"
+                    style={{ backgroundColor: "#FAAE05" }}
+                  >
+                    <Briefcase size={16} className="text-white" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="bg-gray-50 rounded-2xl p-6">
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                      <h4 className="text-xl font-bold text-gray-900">
+                        {exp.position}
+                      </h4>
+                      <span
+                        className="px-3 py-1 rounded-full text-sm font-medium text-white"
+                        style={{ backgroundColor: "#0551FA" }}
+                      >
+                        {exp.company}
+                      </span>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-gray-600">
+                      <div className="flex items-center">
+                        <Calendar size={16} className="mr-1" />
+                        {exp.duration}
+                      </div>
+                      <div className="flex items-center">
+                        <MapPin size={16} className="mr-1" />
+                        {exp.location}
+                      </div>
+                    </div>
+
+                    <p className="text-gray-700 mb-6 leading-relaxed">
+                      {exp.description}
+                    </p>
+
+                    <div className="grid md:grid-cols-2 gap-3">
+                      {exp.achievements.map((achievement, i) => (
+                        <div key={i} className="flex items-start">
+                          <div
+                            className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0"
+                            style={{ backgroundColor: "#FAAE05" }}
+                          ></div>
+                          <span className="text-gray-700 text-sm leading-relaxed">
+                            {achievement}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
