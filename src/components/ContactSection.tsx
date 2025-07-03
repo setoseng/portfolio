@@ -13,11 +13,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => (
           className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight"
           style={{ color: "#0551FA" }}
         >
-          Let's Connect
+          Let&apos;s Connect
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
-          Ready to start your next project? I'd love to hear about your ideas
-          and discuss how we can work together.
+          Ready to start your next project? I&apos;d love to hear about your
+          ideas and discuss how we can work together.
         </p>
       </div>
       <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -182,8 +182,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => (
           Available for new projects
         </div>
         <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-          I'm currently accepting new freelance projects and full-time
-          opportunities. Let's discuss how I can help bring your vision to life.
+          I&apos;m currently accepting new freelance projects and full-time
+          opportunities. Let&apos;s discuss how I can help bring your vision to
+          life.
         </p>
       </div>
     </div>

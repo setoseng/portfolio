@@ -29,8 +29,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           Featured Projects
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
-          A showcase of applications I've built using modern technologies and
-          best practices
+          A showcase of applications I&apos;ve built using modern technologies
+          and best practices
         </p>
       </div>
       <div className="grid gap-8">

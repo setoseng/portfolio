@@ -8,22 +8,6 @@ import ProjectsSection from "../components/ProjectsSection";
 import SkillsSection from "../components/SkillsSection";
 import ContactSection from "../components/ContactSection";
 import FooterSection from "../components/FooterSection";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  ExternalLink,
-  Code,
-  Database,
-  Cloud,
-  ChevronRight,
-  Award,
-  Calendar,
-  MapPin,
-  Phone,
-  ChevronDown,
-} from "lucide-react";
-import Image from "next/image";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

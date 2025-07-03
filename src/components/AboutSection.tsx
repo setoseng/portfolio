@@ -104,17 +104,18 @@ const AboutSection: React.FC<AboutSectionProps> = ({
 
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <p className="text-lg">
-                I'm a Senior Software Engineer with a proven track record of
-                delivering exceptional user experiences and scalable solutions.
-                My journey in software development began with a passion for
-                creating intuitive interfaces that solve real-world problems.
+                I&apos;m a Senior Software Engineer with a proven track record
+                of delivering exceptional user experiences and scalable
+                solutions. My journey in software development began with a
+                passion for creating intuitive interfaces that solve real-world
+                problems.
               </p>
               <p className="text-lg">
-                Over the past 5+ years, I've specialized in React and modern
-                front-end technologies, working across diverse industries from
-                healthcare to e-commerce. I've proven ability to collaborate
-                across product, design, and engineering teams to build
-                component-based UI systems with a focus on scalability,
+                Over the past 5+ years, I&apos;ve specialized in React and
+                modern front-end technologies, working across diverse industries
+                from healthcare to e-commerce. I&apos;ve proven ability to
+                collaborate across product, design, and engineering teams to
+                build component-based UI systems with a focus on scalability,
                 reusability, and user experience.
               </p>
               <p className="text-lg">
