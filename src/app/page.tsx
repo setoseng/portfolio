@@ -74,6 +74,22 @@ export default function Home() {
                 "experience-2": true,
               }));
             }
+
+            // Add specific keys for Skills section components
+            if (section === "skills") {
+              setIsVisible((prev) => ({
+                ...prev,
+                "skills-title": true,
+                "skill-0": true,
+                "skill-1": true,
+                "skill-2": true,
+                "skills-info": true,
+                "skills-item-0": true,
+                "skills-item-1": true,
+                "skills-item-2": true,
+                "skills-item-3": true,
+              }));
+            }
           }
         }
       });

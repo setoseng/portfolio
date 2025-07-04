@@ -79,7 +79,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 mb-20">
           {/* Personal Story & Philosophy */}
           <motion.div
             className="lg:col-span-2 bg-white rounded-3xl p-8 shadow-lg"
@@ -167,92 +167,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 ))}
               </div>
             </div>
-          </motion.div>
-
-          {/* Education & Skills Sidebar */}
-          <motion.div
-            className="space-y-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isVisible["about-visual"] ? "visible" : "hidden"}
-          >
-            {/* Education */}
-            <motion.div
-              className="bg-white rounded-3xl p-6 shadow-lg"
-              variants={itemVariants}
-            >
-              <div className="flex items-center mb-6">
-                <div
-                  className="p-2 rounded-lg mr-3"
-                  style={{ backgroundColor: "#FFF3E0" }}
-                >
-                  <GraduationCap style={{ color: "#FAAE05" }} size={20} />
-                </div>
-                <h4 className="text-xl font-bold" style={{ color: "#0551FA" }}>
-                  Education
-                </h4>
-              </div>
-              <div className="space-y-4">
-                {education.map((edu, index) => (
-                  <div
-                    key={index}
-                    className="border-l-4 pl-4 py-2"
-                    style={{ borderColor: "#FAAE05" }}
-                  >
-                    <h5 className="font-bold text-gray-900 text-sm">
-                      {edu.degree}
-                    </h5>
-                    <p className="font-medium text-gray-700 text-sm">
-                      {edu.school}
-                    </p>
-                    <p className="text-xs text-gray-500 mt-1">
-                      {edu.year} • {edu.details}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Key Metrics */}
-            <motion.div
-              className="bg-white rounded-3xl p-6 shadow-lg"
-              variants={itemVariants}
-            >
-              <div className="flex items-center mb-6">
-                <div
-                  className="p-2 rounded-lg mr-3"
-                  style={{ backgroundColor: "#E3F2FD" }}
-                >
-                  <Zap style={{ color: "#0551FA" }} size={20} />
-                </div>
-                <h4 className="text-xl font-bold" style={{ color: "#0551FA" }}>
-                  Key Achievements
-                </h4>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { label: "Experience", value: "5+ Years", color: "#10B981" },
-                  { label: "Cost Reduction", value: "60%", color: "#F59E0B" },
-                  { label: "Engagement", value: "+18%", color: "#3B82F6" },
-                  { label: "Platforms", value: "4+ Built", color: "#8B5CF6" },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-3 rounded-lg bg-gray-50"
-                  >
-                    <div
-                      className="text-2xl font-bold mb-1"
-                      style={{ color: item.color }}
-                    >
-                      {item.value}
-                    </div>
-                    <div className="text-gray-600 text-xs font-medium">
-                      {item.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
         </div>
 
