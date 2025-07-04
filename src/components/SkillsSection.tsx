@@ -133,7 +133,8 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ isVisible, skills }) => (
             What I Bring to Every Project
           </h3>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
-            Beyond technical skills, here's what makes me a valuable team member
+            Beyond technical skills, here&apos;s what makes me a valuable team
+            member
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

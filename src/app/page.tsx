@@ -265,24 +265,6 @@ export default function Home() {
     },
   ];
 
-  // Setya's education (inferred from experience level)
-  const education = [
-    {
-      degree: "Computer Science or Related Field",
-      school: "University Degree",
-      year: "2018",
-      details:
-        "Bachelor's degree in Computer Science, Software Engineering, or related field",
-    },
-    {
-      degree: "AWS Certified Solutions Architect",
-      school: "Amazon Web Services",
-      year: "2022",
-      details:
-        "Professional certification in cloud architecture and deployment",
-    },
-  ];
-
   // Show loading state during hydration
   if (!isClient) {
     return (
@@ -304,11 +286,7 @@ export default function Home() {
         scrollToSection={scrollToSection}
       />
       <HomeSection scrollToSection={scrollToSection} />
-      <AboutSection
-        isVisible={isVisible}
-        education={education}
-        experience={experience}
-      />
+      <AboutSection isVisible={isVisible} experience={experience} />
       <ProjectsSection isVisible={isVisible} projects={projects} />
       <SkillsSection isVisible={isVisible} skills={skills} />
       <ContactSection isVisible={isVisible} />

@@ -4,7 +4,6 @@ import {
   Award,
   Calendar,
   MapPin,
-  GraduationCap,
   Briefcase,
   Code,
   Zap,
@@ -14,12 +13,6 @@ import {
 
 interface AboutSectionProps {
   isVisible: Record<string, boolean>;
-  education: Array<{
-    degree: string;
-    school: string;
-    year: string;
-    details: string;
-  }>;
   experience: Array<{
     company: string;
     position: string;
@@ -32,7 +25,6 @@ interface AboutSectionProps {
 
 const AboutSection: React.FC<AboutSectionProps> = ({
   isVisible,
-  education,
   experience,
 }) => {
   const containerVariants = {
