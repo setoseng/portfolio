@@ -49,8 +49,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
                 className="inline-block mb-6 px-6 py-3 rounded-full border-2 shadow-sm"
                 style={{ borderColor: "#FAAE05", backgroundColor: "#FFF9E6" }}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
                 <span className="text-gray-700 text-sm font-medium">
                   👋 Welcome to my portfolio
@@ -94,18 +93,15 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
                     scale: 1.05,
                     boxShadow:
                       "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                    transition: { duration: 0.2 },
                   }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
                 >
                   View My Work
-                  <motion.div
-                    className="ml-2"
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <ChevronRight size={20} />
-                  </motion.div>
+                  <ChevronRight
+                    size={20}
+                    className="ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                  />
                 </motion.button>
 
                 <motion.button
@@ -116,9 +112,9 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
                     scale: 1.05,
                     backgroundColor: "#0551FA",
                     color: "white",
+                    transition: { duration: 0.2 },
                   }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
                 >
                   Get In Touch
                 </motion.button>
@@ -159,37 +155,29 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
-                    className="group relative overflow-hidden bg-white rounded-2xl p-6 shadow-sm border border-gray-100 cursor-pointer"
+                    className="group relative overflow-hidden bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer"
                     variants={statVariants}
                     whileHover={{
                       scale: 1.02,
-                      boxShadow:
-                        "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                      transition: { duration: 0.2 },
                     }}
-                    transition={{ duration: 0.2 }}
                   >
                     {/* Background gradient on hover */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                     {/* Content */}
                     <div className="relative z-10 text-center">
-                      <motion.div
-                        className="flex justify-center mb-3"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <stat.icon size={32} style={{ color: stat.color }} />
-                      </motion.div>
+                      <div className="flex justify-center mb-3">
+                        <stat.icon
+                          size={32}
+                          style={{ color: stat.color }}
+                          className="group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
                       <motion.div
                         className="text-2xl font-bold mb-2 leading-tight"
                         style={{ color: "#0551FA" }}
                         whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
                       >
                         {stat.number}
                       </motion.div>
@@ -199,13 +187,10 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
                     </div>
 
                     {/* Subtle border accent */}
-                    <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-1"
+                    <div
+                      className="absolute bottom-0 left-0 right-0 h-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                       style={{ backgroundColor: stat.color }}
-                      initial={{ scaleX: 0 }}
-                      whileHover={{ scaleX: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
+                    ></div>
                   </motion.div>
                 ))}
               </motion.div>

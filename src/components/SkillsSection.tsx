@@ -1,6 +1,5 @@
 import React from "react";
 import { Code, Database, Cloud } from "lucide-react";
-import { motion } from "framer-motion";
 
 interface SkillsSectionProps {
   isVisible: Record<string, boolean>;
@@ -26,17 +25,13 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ isVisible, skills }) => (
         </p>
       </div>
       <div className="grid md:grid-cols-3 gap-8">
-        <motion.div
-          className="bg-white rounded-3xl p-8 shadow-lg"
+        <div
+          className={`bg-white rounded-3xl p-8 shadow-lg transition-all duration-1000 ${
+            isVisible["skill-0"]
+              ? "translate-y-0 opacity-100"
+              : "translate-y-20 opacity-0"
+          }`}
           data-animate="skill-0"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          whileHover={{
-            y: -5,
-            boxShadow:
-              "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-          }}
         >
           <div className="flex items-center mb-6">
             <div
@@ -51,28 +46,22 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ isVisible, skills }) => (
           </div>
           <div className="grid grid-cols-2 gap-3">
             {skills.frontend.map((skill, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="px-3 py-2 rounded-lg text-sm font-medium text-center bg-gray-100 text-gray-700"
-                whileHover={{ backgroundColor: "#e5e7eb", scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+                className="px-3 py-2 rounded-lg text-sm font-medium text-center transition-colors duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
               >
                 {skill}
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
-        <motion.div
-          className="bg-white rounded-3xl p-8 shadow-lg"
+        </div>
+        <div
+          className={`bg-white rounded-3xl p-8 shadow-lg transition-all duration-1000 delay-200 ${
+            isVisible["skill-1"]
+              ? "translate-y-0 opacity-100"
+              : "translate-y-20 opacity-0"
+          }`}
           data-animate="skill-1"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          whileHover={{
-            y: -5,
-            boxShadow:
-              "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-          }}
         >
           <div className="flex items-center mb-6">
             <div
@@ -87,28 +76,22 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ isVisible, skills }) => (
           </div>
           <div className="grid grid-cols-2 gap-3">
             {skills.backend.map((skill, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="px-3 py-2 rounded-lg text-sm font-medium text-center bg-gray-100 text-gray-700"
-                whileHover={{ backgroundColor: "#e5e7eb", scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+                className="px-3 py-2 rounded-lg text-sm font-medium text-center transition-colors duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
               >
                 {skill}
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
-        <motion.div
-          className="bg-white rounded-3xl p-8 shadow-lg"
+        </div>
+        <div
+          className={`bg-white rounded-3xl p-8 shadow-lg transition-all duration-1000 delay-400 ${
+            isVisible["skill-2"]
+              ? "translate-y-0 opacity-100"
+              : "translate-y-20 opacity-0"
+          }`}
           data-animate="skill-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          whileHover={{
-            y: -5,
-            boxShadow:
-              "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-          }}
         >
           <div className="flex items-center mb-6">
             <div
@@ -123,25 +106,24 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ isVisible, skills }) => (
           </div>
           <div className="grid grid-cols-2 gap-3">
             {skills.tools.map((skill, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="px-3 py-2 rounded-lg text-sm font-medium text-center bg-gray-100 text-gray-700"
-                whileHover={{ backgroundColor: "#e5e7eb", scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+                className="px-3 py-2 rounded-lg text-sm font-medium text-center transition-colors duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
               >
                 {skill}
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
       {/* Additional Info */}
-      <motion.div
-        className="mt-20 bg-gradient-to-br from-white to-blue-50 rounded-3xl p-12 shadow-xl border border-blue-100"
+      <div
+        className={`mt-20 bg-gradient-to-br from-white to-blue-50 rounded-3xl p-12 shadow-xl border border-blue-100 transition-all duration-1000 ${
+          isVisible["skills-info"]
+            ? "translate-y-0 opacity-100"
+            : "translate-y-20 opacity-0"
+        }`}
         data-animate="skills-info"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
       >
         <div className="text-center mb-12">
           <h3
@@ -213,28 +195,22 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ isVisible, skills }) => (
               ),
             },
           ].map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              className="text-center p-6 rounded-2xl bg-white shadow-lg"
+              className={`text-center p-6 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${
+                isVisible[`skills-item-${index}`]
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
               data-animate={`skills-item-${index}`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{
-                scale: 1.05,
-                boxShadow:
-                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                y: -5,
-              }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              style={{ animationDelay: `${index * 200}ms` }}
             >
-              <motion.div
+              <div
                 className="flex justify-center mb-4"
                 style={{ color: "#0551FA" }}
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.2 }}
               >
                 {item.icon}
-              </motion.div>
+              </div>
               <h4
                 className="font-bold text-xl mb-3"
                 style={{ color: "#0551FA" }}
@@ -244,10 +220,10 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ isVisible, skills }) => (
               <p className="text-gray-600 text-sm leading-relaxed">
                 {item.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   </section>
 );

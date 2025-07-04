@@ -1,6 +1,5 @@
 import React from "react";
 import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
 
 interface ContactSectionProps {
   isVisible: Record<string, boolean>;
@@ -71,45 +70,24 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => (
           <div className="mt-8">
             <h4 className="font-bold text-gray-900 mb-4">Follow Me</h4>
             <div className="flex space-x-4">
-              <motion.a
+              <a
                 href="#"
-                className="p-3 rounded-lg bg-white shadow-sm cursor-pointer"
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow:
-                    "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
+                className="p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
               >
                 <Github style={{ color: "#0551FA" }} size={20} />
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 href="#"
-                className="p-3 rounded-lg bg-white shadow-sm cursor-pointer"
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow:
-                    "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
+                className="p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
               >
                 <Linkedin style={{ color: "#0551FA" }} size={20} />
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 href="mailto:setoseng@gmail.com"
-                className="p-3 rounded-lg bg-white shadow-sm cursor-pointer"
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow:
-                    "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
+                className="p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
               >
                 <Mail style={{ color: "#0551FA" }} size={20} />
-              </motion.a>
+              </a>
             </div>
           </div>
         </div>
@@ -174,20 +152,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => (
                 placeholder="Tell me about your project..."
               ></textarea>
             </div>
-            <motion.button
+            <button
               type="submit"
-              className="w-full text-white py-3 px-6 rounded-lg font-semibold cursor-pointer"
+              className="w-full text-white py-3 px-6 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg transform hover:scale-105 cursor-pointer"
               style={{ backgroundColor: "#0551FA" }}
-              whileHover={{
-                scale: 1.05,
-                boxShadow:
-                  "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
             >
               Send Message
-            </motion.button>
+            </button>
           </form>
         </div>
       </div>
