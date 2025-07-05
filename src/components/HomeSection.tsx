@@ -35,7 +35,10 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
   };
 
   return (
-    <section id="home" className="pt-20 pb-16 px-6 bg-white">
+    <section
+      id="home"
+      className="pt-16 sm:pt-20 pb-12 sm:pb-16 px-4 sm:px-6 bg-white"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="min-h-screen flex items-center">
           <motion.div
@@ -46,23 +49,23 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
           >
             <div className="text-center">
               <motion.div
-                className="inline-block mb-6 px-6 py-3 rounded-full border-2 shadow-sm"
+                className="inline-block mb-4 sm:mb-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full border-2 shadow-sm"
                 style={{ borderColor: "#FAAE05", backgroundColor: "#FFF9E6" }}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
-                <span className="text-gray-700 text-sm font-medium">
+                <span className="text-gray-700 text-xs sm:text-sm font-medium">
                   👋 Welcome to my portfolio
                 </span>
               </motion.div>
 
               <motion.h1
-                className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight text-gray-900 tracking-tight"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold mb-4 sm:mb-6 leading-tight text-gray-900 tracking-tight"
                 variants={itemVariants}
               >
                 <span className="block">Setya Seng</span>
                 <motion.span
-                  className="block text-4xl md:text-5xl mt-4 font-bold"
+                  className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 sm:mt-4 font-bold"
                   style={{ color: "#FAAE05" }}
                   variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
@@ -72,7 +75,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
               </motion.h1>
 
               <motion.p
-                className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-gray-600 font-medium"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed text-gray-600 font-medium px-2"
                 variants={itemVariants}
               >
                 I deliver robust, performant, and accessible full-stack
@@ -82,12 +85,12 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
               </motion.p>
 
               <motion.div
-                className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16"
                 variants={itemVariants}
               >
                 <motion.button
                   onClick={() => scrollToSection("projects")}
-                  className="group text-white px-8 py-4 rounded-full font-semibold flex items-center justify-center shadow-lg cursor-pointer"
+                  className="group text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center shadow-lg cursor-pointer text-sm sm:text-base"
                   style={{ backgroundColor: "#0551FA" }}
                   whileHover={{
                     scale: 1.05,
@@ -99,14 +102,14 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
                 >
                   View My Work
                   <ChevronRight
-                    size={20}
-                    className="ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                    size={18}
+                    className="ml-2 group-hover:translate-x-1 transition-transform duration-300 sm:w-5 sm:h-5"
                   />
                 </motion.button>
 
                 <motion.button
                   onClick={() => scrollToSection("contact")}
-                  className="group border-2 px-8 py-4 rounded-full font-semibold cursor-pointer"
+                  className="group border-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold cursor-pointer text-sm sm:text-base"
                   style={{ borderColor: "#0551FA", color: "#0551FA" }}
                   whileHover={{
                     scale: 1.05,
@@ -122,7 +125,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
 
               {/* Quick Stats */}
               <motion.div
-                className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto"
+                className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 max-w-5xl mx-auto"
                 variants={statsVariants}
                 initial="hidden"
                 animate="visible"
@@ -155,7 +158,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
-                    className="group relative overflow-hidden bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    className="group relative overflow-hidden bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer"
                     variants={statVariants}
                     whileHover={{
                       scale: 1.02,
@@ -167,21 +170,20 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
 
                     {/* Content */}
                     <div className="relative z-10 text-center">
-                      <div className="flex justify-center mb-3">
+                      <div className="flex justify-center mb-2 sm:mb-3">
                         <stat.icon
-                          size={32}
+                          size={24}
+                          className="sm:w-8 sm:h-8 group-hover:scale-110 transition-transform duration-300"
                           style={{ color: stat.color }}
-                          className="group-hover:scale-110 transition-transform duration-300"
                         />
                       </div>
                       <motion.div
-                        className="text-2xl font-bold mb-2 leading-tight"
+                        className="text-lg sm:text-xl lg:text-2xl font-bold mb-1 sm:mb-2 leading-tight"
                         style={{ color: "#0551FA" }}
-                        whileHover={{ scale: 1.05 }}
                       >
                         {stat.number}
                       </motion.div>
-                      <div className="text-gray-600 text-sm font-medium uppercase tracking-wide">
+                      <div className="text-gray-600 text-xs sm:text-sm font-medium uppercase tracking-wide">
                         {stat.label}
                       </div>
                     </div>
@@ -197,7 +199,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
 
               {/* Scroll Indicator */}
               <motion.div
-                className="mt-16"
+                className="mt-12 sm:mt-16"
                 animate={{ y: [0, 10, 0] }}
                 transition={{
                   duration: 2,
@@ -205,7 +207,10 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
                   ease: "easeInOut",
                 }}
               >
-                <ChevronDown size={24} className="mx-auto text-gray-400" />
+                <ChevronDown
+                  size={20}
+                  className="mx-auto text-gray-400 sm:w-6 sm:h-6"
+                />
               </motion.div>
             </div>
           </motion.div>

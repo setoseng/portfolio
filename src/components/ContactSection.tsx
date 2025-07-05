@@ -6,40 +6,52 @@ interface ContactSectionProps {
 }
 
 const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => (
-  <section id="contact" className="py-20 px-6 bg-white">
+  <section
+    id="contact"
+    className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-white"
+  >
     <div className="max-w-4xl mx-auto">
-      <div className="text-center mb-16" data-animate="contact-title">
+      <div className="text-center mb-12 sm:mb-16" data-animate="contact-title">
         <h2
-          className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight"
           style={{ color: "#0551FA" }}
         >
           Let&apos;s Connect
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-medium px-2">
           Ready to start your next project? I&apos;d love to hear about your
           ideas and discuss how we can work together.
         </p>
       </div>
-      <div className="grid md:grid-cols-2 gap-8 mb-12">
+      <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
         <div
-          className={`bg-gray-50 rounded-3xl p-8 shadow-lg transition-all duration-1000 ${
+          className={`bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg transition-all duration-1000 ${
             isVisible["contact-info"]
               ? "translate-x-0 opacity-100"
               : "-translate-x-20 opacity-0"
           }`}
           data-animate="contact-info"
         >
-          <h3 className="text-2xl font-bold mb-6" style={{ color: "#0551FA" }}>
+          <h3
+            className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6"
+            style={{ color: "#0551FA" }}
+          >
             Get In Touch
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <div className="flex items-center">
-              <Mail className="mr-4" size={20} style={{ color: "#FAAE05" }} />
+              <Mail
+                className="mr-3 sm:mr-4 sm:w-5 sm:h-5"
+                size={18}
+                style={{ color: "#FAAE05" }}
+              />
               <div>
-                <p className="font-medium text-gray-900">Email</p>
+                <p className="font-medium text-gray-900 text-sm sm:text-base">
+                  Email
+                </p>
                 <a
                   href="mailto:setoseng@gmail.com"
-                  className="hover:underline"
+                  className="hover:underline text-sm sm:text-base"
                   style={{ color: "#0551FA" }}
                 >
                   setoseng@gmail.com
@@ -47,12 +59,18 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => (
               </div>
             </div>
             <div className="flex items-center">
-              <Phone className="mr-4" size={20} style={{ color: "#FAAE05" }} />
+              <Phone
+                className="mr-3 sm:mr-4 sm:w-5 sm:h-5"
+                size={18}
+                style={{ color: "#FAAE05" }}
+              />
               <div>
-                <p className="font-medium text-gray-900">Phone</p>
+                <p className="font-medium text-gray-900 text-sm sm:text-base">
+                  Phone
+                </p>
                 <a
                   href="tel:+12817404312"
-                  className="hover:underline"
+                  className="hover:underline text-sm sm:text-base"
                   style={{ color: "#0551FA" }}
                 >
                   +1 (281) 740-4312
@@ -60,77 +78,102 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => (
               </div>
             </div>
             <div className="flex items-center">
-              <MapPin className="mr-4" size={20} style={{ color: "#FAAE05" }} />
+              <MapPin
+                className="mr-3 sm:mr-4 sm:w-5 sm:h-5"
+                size={18}
+                style={{ color: "#FAAE05" }}
+              />
               <div>
-                <p className="font-medium text-gray-900">Location</p>
-                <p className="text-gray-600">Remote / Houston Area</p>
+                <p className="font-medium text-gray-900 text-sm sm:text-base">
+                  Location
+                </p>
+                <p className="text-gray-600 text-sm sm:text-base">
+                  Remote / Houston Area
+                </p>
               </div>
             </div>
           </div>
-          <div className="mt-8">
-            <h4 className="font-bold text-gray-900 mb-4">Follow Me</h4>
-            <div className="flex space-x-4">
+          <div className="mt-6 sm:mt-8">
+            <h4 className="font-bold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">
+              Follow Me
+            </h4>
+            <div className="flex space-x-3 sm:space-x-4">
               <a
                 href="#"
-                className="p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
+                className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
               >
-                <Github style={{ color: "#0551FA" }} size={20} />
+                <Github
+                  style={{ color: "#0551FA" }}
+                  size={18}
+                  className="sm:w-5 sm:h-5"
+                />
               </a>
               <a
                 href="#"
-                className="p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
+                className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
               >
-                <Linkedin style={{ color: "#0551FA" }} size={20} />
+                <Linkedin
+                  style={{ color: "#0551FA" }}
+                  size={18}
+                  className="sm:w-5 sm:h-5"
+                />
               </a>
               <a
                 href="mailto:setoseng@gmail.com"
-                className="p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
+                className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
               >
-                <Mail style={{ color: "#0551FA" }} size={20} />
+                <Mail
+                  style={{ color: "#0551FA" }}
+                  size={18}
+                  className="sm:w-5 sm:h-5"
+                />
               </a>
             </div>
           </div>
         </div>
         <div
-          className={`bg-gray-50 rounded-3xl p-8 shadow-lg transition-all duration-1000 delay-300 ${
+          className={`bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg transition-all duration-1000 delay-300 ${
             isVisible["contact-form"]
               ? "translate-x-0 opacity-100"
               : "translate-x-20 opacity-0"
           }`}
           data-animate="contact-form"
         >
-          <h3 className="text-2xl font-bold mb-6" style={{ color: "#0551FA" }}>
+          <h3
+            className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6"
+            style={{ color: "#0551FA" }}
+          >
             Send a Message
           </h3>
-          <form className="space-y-4">
+          <form className="space-y-3 sm:space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                 Name
               </label>
               <input
                 type="text"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base"
                 style={{ "--tw-ring-color": "#0551FA" } as React.CSSProperties}
                 placeholder="Your full name"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                 Email
               </label>
               <input
                 type="email"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base"
                 style={{ "--tw-ring-color": "#0551FA" } as React.CSSProperties}
                 placeholder="your.email@example.com"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                 Project Type
               </label>
               <select
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base"
                 style={{ "--tw-ring-color": "#0551FA" } as React.CSSProperties}
               >
                 <option>Web Application</option>
@@ -142,19 +185,19 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => (
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                 Message
               </label>
               <textarea
                 rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base"
                 style={{ "--tw-ring-color": "#0551FA" } as React.CSSProperties}
                 placeholder="Tell me about your project..."
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full text-white py-3 px-6 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg transform hover:scale-105 cursor-pointer"
+              className="w-full text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg transform hover:scale-105 cursor-pointer text-sm sm:text-base"
               style={{ backgroundColor: "#0551FA" }}
             >
               Send Message
@@ -164,24 +207,27 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => (
       </div>
       {/* Availability */}
       <div
-        className={`bg-gray-50 rounded-3xl p-8 shadow-lg text-center transition-all duration-1000 delay-500 ${
+        className={`bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg text-center transition-all duration-1000 delay-500 ${
           isVisible["availability"]
             ? "translate-y-0 opacity-100"
             : "translate-y-10 opacity-0"
         }`}
         data-animate="availability"
       >
-        <h3 className="text-2xl font-bold mb-4" style={{ color: "#0551FA" }}>
+        <h3
+          className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4"
+          style={{ color: "#0551FA" }}
+        >
           Current Availability
         </h3>
         <div
-          className="inline-flex items-center text-blue-900 px-6 py-3 rounded-full font-medium shadow-sm"
+          className="inline-flex items-center text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium shadow-sm text-sm sm:text-base"
           style={{ backgroundColor: "#FAAE05" }}
         >
-          <div className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+          <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
           Available for new projects
         </div>
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+        <p className="text-gray-600 mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base px-2">
           I&apos;m currently accepting new freelance projects and full-time
           opportunities. Let&apos;s discuss how I can help bring your vision to
           life.

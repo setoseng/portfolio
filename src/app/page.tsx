@@ -168,24 +168,21 @@ export default function Home() {
     },
   ];
 
-  // Setya's real skills from resume
+  // Setya's focused skills for scalable business solutions
   const skills = {
     frontend: [
       "React",
       "React Native",
+      "Redux",
       "Next.js",
       "Remix",
       "TypeScript",
       "JavaScript",
       "HTML5",
       "CSS3",
-      "Redux",
       "Responsive Design",
       "Component-based UI Systems",
-      "Figma Design Systems",
-      "User Experience (UX)",
       "Accessibility",
-      "Progressive Web Apps",
     ],
     backend: [
       "Node.js",
@@ -198,24 +195,16 @@ export default function Home() {
       "JWT Authentication",
       "API Design",
       "Database Design",
-      "Server Architecture",
-      "Microservices",
     ],
     tools: [
       "AWS (EC2, S3, LightSail, RDS)",
       "Git",
       "Jira",
-      "Agile Development",
       "DevOps",
       "CI/CD",
-      "TDD",
       "Figma",
-      "Adobe Illustrator",
-      "Adobe Photoshop",
       "Stripe Integration",
-      "Klaviyo",
-      "Google Analytics",
-      "Meta Ads",
+      "Analytics & Tracking",
     ],
   };
 

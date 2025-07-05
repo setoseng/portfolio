@@ -19,25 +19,28 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   isVisible,
   projects,
 }) => (
-  <section id="projects" className="py-20 px-6 bg-white">
+  <section
+    id="projects"
+    className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-white"
+  >
     <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-16" data-animate="projects-title">
+      <div className="text-center mb-12 sm:mb-16" data-animate="projects-title">
         <h2
-          className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight"
           style={{ color: "#0551FA" }}
         >
           Featured Projects
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-medium px-2">
           A showcase of applications I&apos;ve built using modern technologies
           and best practices
         </p>
       </div>
-      <div className="grid gap-8">
+      <div className="grid gap-6 sm:gap-8">
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:scale-[1.01] ${
+            className={`bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:scale-[1.01] ${
               isVisible[`project-${index}`]
                 ? "translate-y-0 opacity-100"
                 : "translate-y-10 opacity-0"
@@ -51,75 +54,79 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             >
               {/* Project Visual */}
               <div
-                className="relative h-64 lg:h-80 flex items-center justify-center"
+                className="relative h-48 sm:h-64 lg:h-80 flex items-center justify-center"
                 style={{
                   background:
                     "linear-gradient(135deg, #0551FA 0%, #0441D1 100%)",
                 }}
               >
                 {project.featured && (
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
                     <span
-                      className="text-blue-900 px-3 py-1 rounded-full text-xs font-bold flex items-center"
+                      className="text-blue-900 px-2 sm:px-3 py-1 rounded-full text-xs font-bold flex items-center"
                       style={{ backgroundColor: "#FAAE05" }}
                     >
-                      <Award size={12} className="mr-1" />
+                      <Award size={10} className="mr-1 sm:w-3 sm:h-3" />
                       Featured
                     </span>
                   </div>
                 )}
-                <div className="text-6xl text-white/30">🚀</div>
+                <div className="text-4xl sm:text-6xl text-white/30">🚀</div>
               </div>
               {/* Project Content */}
-              <div className="p-8">
+              <div className="p-4 sm:p-6 lg:p-8">
                 <h3
-                  className="text-2xl font-bold mb-4"
+                  className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4"
                   style={{ color: "#0551FA" }}
                 >
                   {project.title}
                 </h3>
-                <p className="text-gray-700 mb-4 leading-relaxed">
+                <p className="text-gray-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
                   {project.description}
                 </p>
-                <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">
+                <div className="mb-3 sm:mb-4">
+                  <h4 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">
                     Key Challenge:
                   </h4>
-                  <p className="text-gray-600 text-sm">{project.challenges}</p>
+                  <p className="text-gray-600 text-xs sm:text-sm">
+                    {project.challenges}
+                  </p>
                 </div>
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-2">Outcome:</h4>
+                <div className="mb-4 sm:mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">
+                    Outcome:
+                  </h4>
                   <p
-                    className="text-sm font-medium"
+                    className="text-xs sm:text-sm font-medium"
                     style={{ color: "#FAAE05" }}
                   >
                     {project.outcome}
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 rounded-full text-sm font-medium text-white"
+                      className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-white"
                       style={{ backgroundColor: "#0551FA" }}
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-4">
+                <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0">
                   <a
                     href={project.github}
-                    className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
+                    className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium text-sm sm:text-base"
                   >
-                    <Github size={18} className="mr-2" />
+                    <Github size={16} className="mr-2 sm:w-4 sm:h-4" />
                     View Code
                   </a>
                   <a
                     href={project.demo}
-                    className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
+                    className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium text-sm sm:text-base"
                   >
-                    <ExternalLink size={18} className="mr-2" />
+                    <ExternalLink size={16} className="mr-2 sm:w-4 sm:h-4" />
                     Live Demo
                   </a>
                 </div>
