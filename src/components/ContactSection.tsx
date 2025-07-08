@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Github, Linkedin, Mail, Phone, MapPin, Loader2 } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { Github, Linkedin, Mail, MapPin, Loader2 } from "lucide-react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface ContactSectionProps {
   isVisible: Record<string, boolean>;
@@ -25,6 +26,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -38,8 +41,21 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
     }));
   };
 
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!recaptchaToken) {
+      setSubmitStatus({
+        type: "error",
+        message: "Please complete the reCAPTCHA verification.",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
@@ -49,7 +65,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken,
+        }),
       });
 
       const result = await response.json();
@@ -59,13 +78,15 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
           type: "success",
           message: "Thank you! Your message has been sent successfully.",
         });
-        // Reset form
+        // Reset form and reCAPTCHA
         setFormData({
           name: "",
           email: "",
           projectType: "Web Application",
           message: "",
         });
+        setRecaptchaToken(null);
+        recaptchaRef.current?.reset();
       } else {
         setSubmitStatus({
           type: "error",
@@ -136,25 +157,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                     style={{ color: "#0551FA" }}
                   >
                     setoseng@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <Phone
-                  className="mr-3 sm:mr-4 sm:w-5 sm:h-5"
-                  size={18}
-                  style={{ color: "#FAAE05" }}
-                />
-                <div>
-                  <p className="font-medium text-gray-900 text-sm sm:text-base">
-                    Phone
-                  </p>
-                  <a
-                    href="tel:+12817404312"
-                    className="hover:underline text-sm sm:text-base"
-                    style={{ color: "#0551FA" }}
-                  >
-                    +1 (281) 740-4312
                   </a>
                 </div>
               </div>
@@ -251,7 +253,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
                   style={
                     { "--tw-ring-color": "#0551FA" } as React.CSSProperties
                   }
@@ -269,7 +271,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
                   style={
                     { "--tw-ring-color": "#0551FA" } as React.CSSProperties
                   }
@@ -285,7 +287,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   name="projectType"
                   value={formData.projectType}
                   onChange={handleInputChange}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
                   style={
                     { "--tw-ring-color": "#0551FA" } as React.CSSProperties
                   }
@@ -309,13 +311,21 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   onChange={handleInputChange}
                   required
                   rows={4}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
                   style={
                     { "--tw-ring-color": "#0551FA" } as React.CSSProperties
                   }
                   placeholder="Tell me about your project..."
                   disabled={isSubmitting}
                 ></textarea>
+              </div>
+              <div className="flex justify-center">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                  onChange={handleRecaptchaChange}
+                  theme="light"
+                />
               </div>
               <button
                 type="submit"
