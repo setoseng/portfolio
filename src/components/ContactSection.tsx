@@ -73,6 +73,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
         });
       }
     } catch (error) {
+      console.error(error);
       setSubmitStatus({
         type: "error",
         message: "Network error. Please check your connection and try again.",
