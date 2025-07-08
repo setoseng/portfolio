@@ -33,6 +33,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // For reCAPTCHA v3, check the score (0.0 is very likely a bot, 1.0 is very likely a human)
+    if (recaptchaData.score < 0.5) {
+      return NextResponse.json(
+        { error: "reCAPTCHA score too low. Please try again." },
+        { status: 400 }
+      );
+    }
+
     // Validate required fields
     if (!name || !email || !message) {
       return NextResponse.json(

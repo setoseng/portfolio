@@ -1,6 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Github, Linkedin, Mail, MapPin, Loader2 } from "lucide-react";
-import ReCAPTCHA from "react-google-recaptcha";
 
 interface ContactSectionProps {
   isVisible: Record<string, boolean>;
@@ -27,7 +26,48 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
     message: string;
   }>({ type: null, message: "" });
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+  // Load reCAPTCHA v3 script early to analyze user behavior
+  useEffect(() => {
+    // Check if script is already loaded
+    if (typeof window !== "undefined" && (window as any).grecaptcha) {
+      return;
+    }
+
+    // Check if script is already being loaded
+    if (document.querySelector('script[src*="recaptcha/api.js"]')) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    script.defer = true;
+
+    document.head.appendChild(script);
+  }, []);
+
+  // Execute reCAPTCHA v3
+  const executeRecaptcha = async (): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      if (typeof window !== "undefined" && (window as any).grecaptcha) {
+        (window as any).grecaptcha.ready(() => {
+          (window as any).grecaptcha
+            .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, {
+              action: "contact_form",
+            })
+            .then((token: string) => {
+              resolve(token);
+            })
+            .catch((error: any) => {
+              reject(error);
+            });
+        });
+      } else {
+        reject(new Error("reCAPTCHA not loaded"));
+      }
+    });
+  };
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -41,25 +81,16 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
     }));
   };
 
-  const handleRecaptchaChange = (token: string | null) => {
-    setRecaptchaToken(token);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!recaptchaToken) {
-      setSubmitStatus({
-        type: "error",
-        message: "Please complete the reCAPTCHA verification.",
-      });
-      return;
-    }
 
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
     try {
+      // Execute reCAPTCHA v3
+      const token = await executeRecaptcha();
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -67,7 +98,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
         },
         body: JSON.stringify({
           ...formData,
-          recaptchaToken,
+          recaptchaToken: token,
         }),
       });
 
@@ -78,15 +109,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
           type: "success",
           message: "Thank you! Your message has been sent successfully.",
         });
-        // Reset form and reCAPTCHA
+        // Reset form
         setFormData({
           name: "",
           email: "",
           projectType: "Web Application",
           message: "",
         });
-        setRecaptchaToken(null);
-        recaptchaRef.current?.reset();
       } else {
         setSubmitStatus({
           type: "error",
@@ -318,14 +347,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   placeholder="Tell me about your project..."
                   disabled={isSubmitting}
                 ></textarea>
-              </div>
-              <div className="flex justify-center">
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-                  onChange={handleRecaptchaChange}
-                  theme="light"
-                />
               </div>
               <button
                 type="submit"
