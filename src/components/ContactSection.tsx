@@ -236,7 +236,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
               </h4>
               <div className="flex space-x-3 sm:space-x-4">
                 <a
-                  href="#"
+                  target="_blank"
+                  href="https://github.com/setoseng"
                   className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
                 >
                   <Github
@@ -246,7 +247,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   />
                 </a>
                 <a
-                  href="#"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/setya-seng/"
                   className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
                 >
                   <Linkedin
