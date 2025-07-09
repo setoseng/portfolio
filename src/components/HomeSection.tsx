@@ -49,8 +49,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
           >
             <div className="text-center">
               <motion.div
-                className="inline-block mb-4 sm:mb-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full border-2 shadow-sm"
-                style={{ borderColor: "#FAAE05", backgroundColor: "#FFF9E6" }}
+                className="inline-block mb-4 sm:mb-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full border-2 shadow-sm border-accent bg-yellow-50"
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
@@ -65,12 +64,11 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
               >
                 <span className="block">Setya Seng</span>
                 <motion.span
-                  className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 sm:mt-4 font-bold"
-                  style={{ color: "#FAAE05" }}
+                  className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 sm:mt-4 font-bold text-accent"
                   variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
                 >
-                  Senior Software Engineer
+                  Full-Stack Software Engineer
                 </motion.span>
               </motion.h1>
 
@@ -90,8 +88,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
               >
                 <motion.button
                   onClick={() => scrollToSection("projects")}
-                  className="group text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center shadow-lg cursor-pointer text-sm sm:text-base"
-                  style={{ backgroundColor: "#0551FA" }}
+                  className="group text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center shadow-lg cursor-pointer text-sm sm:text-base bg-primary"
                   whileHover={{
                     scale: 1.05,
                     boxShadow:
@@ -109,12 +106,9 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
 
                 <motion.button
                   onClick={() => scrollToSection("contact")}
-                  className="group border-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold cursor-pointer text-sm sm:text-base"
-                  style={{ borderColor: "#0551FA", color: "#0551FA" }}
+                  className="group border-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold cursor-pointer text-sm sm:text-base border-primary text-primary hover:bg-primary hover:text-white"
                   whileHover={{
                     scale: 1.05,
-                    backgroundColor: "#0551FA",
-                    color: "white",
                     transition: { duration: 0.2 },
                   }}
                   whileTap={{ scale: 0.95 }}
@@ -141,7 +135,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
                     number: "Performance",
                     label: "Optimized",
                     icon: Zap,
-                    color: "#F59E0B",
+                    color: "#FAAE05",
                   },
                   {
                     number: "Customer",
@@ -177,10 +171,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ scrollToSection }) => {
                           style={{ color: stat.color }}
                         />
                       </div>
-                      <motion.div
-                        className="text-lg sm:text-xl lg:text-2xl font-bold mb-1 sm:mb-2 leading-tight"
-                        style={{ color: "#0551FA" }}
-                      >
+                      <motion.div className="text-lg sm:text-xl lg:text-2xl font-bold mb-1 sm:mb-2 leading-tight text-primary">
                         {stat.number}
                       </motion.div>
                       <div className="text-gray-600 text-xs sm:text-sm font-medium uppercase tracking-wide">

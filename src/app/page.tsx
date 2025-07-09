@@ -216,7 +216,7 @@ export default function Home() {
       duration: "April 2023 - Current",
       location: "Remote",
       description:
-        "Senior Software Engineer delivering robust, performant, and accessible user interfaces using React and modern front-end technologies. Proven ability to collaborate across product, design, and engineering teams to build component-based UI systems.",
+        "Full-Stack Software Engineer delivering robust, performant, and accessible user interfaces using React and modern front-end technologies. Proven ability to collaborate across product, design, and engineering teams to build component-based UI systems.",
       achievements: [
         "Designed and implemented scalable web applications using React and Remix, improving user engagement",
         "Replaced third-party tools with in-house solutions, resulting in 60% reduction in operational costs",

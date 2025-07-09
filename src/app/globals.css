@@ -9,12 +9,43 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: #0551fa;
+  --color-primary-dark: #0441d1;
+  --color-accent: #faae05;
+
   --font-sans:
     var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono:
     "JetBrains Mono", "Fira Code", "Monaco", "Cascadia Code", "Roboto Mono",
     Consolas, "Courier New", monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+  --font-size-8xl: 6rem;
+  --font-size-9xl: 8rem;
+
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  --animation-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animation-bounce-slow: bounce 2s infinite;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -98,12 +129,12 @@ h3 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0551fa;
+  background: var(--color-primary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0441d1;
+  background: var(--color-primary-dark);
 }
 
 /* Focus styles */

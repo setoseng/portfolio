@@ -131,7 +131,7 @@ Update your personal details in `src/app/page.tsx`:
 ```typescript
 const personalInfo = {
   name: "Setya Seng",
-  title: "Senior Software Engineer",
+  title: "Full-Stack Software Engineer",
   email: "your.email@example.com",
   // ... other details
 };

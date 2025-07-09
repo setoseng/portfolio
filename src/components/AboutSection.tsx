@@ -67,9 +67,9 @@ const AboutSection: React.FC<AboutSectionProps> = ({
             className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed px-2"
             variants={itemVariants}
           >
-            Senior Software Engineer with over 5 years of experience delivering
-            robust, performant, and accessible full-stack applications using
-            React, Node.js, and modern technologies
+            Full-Stack Software Engineer with over 5 years of experience
+            delivering robust, performant, and accessible full-stack
+            applications using React, Node.js, and modern technologies
           </motion.p>
         </motion.div>
 
@@ -103,8 +103,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({
 
             <div className="space-y-4 sm:space-y-6 text-gray-700 leading-relaxed">
               <p className="text-base sm:text-lg">
-                I&apos;m a Senior Software Engineer with a proven track record
-                of delivering exceptional user experiences and scalable
+                I&apos;m a Full-Stack Software Engineer with a proven track
+                record of delivering exceptional user experiences and scalable
                 solutions. My journey in software development began with a
                 passion for creating intuitive interfaces that solve real-world
                 problems.

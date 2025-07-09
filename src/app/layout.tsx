@@ -19,13 +19,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Setya Seng - Senior Software Engineer Portfolio",
+  title: "Setya Seng - Full-Stack Software Engineer Portfolio",
   description:
-    "Professional portfolio of Setya Seng, a senior software engineer specializing in full-stack applications with React, Node.js, TypeScript, and modern web technologies. View projects, skills, and contact information.",
+    "Professional portfolio of Setya Seng, a full-stack software engineer specializing in full-stack applications with React, Node.js, TypeScript, and modern web technologies. View projects, skills, and contact information.",
   keywords: [
     "Setya Seng",
     "Software Engineer",
     "Full-Stack Developer",
+    "Full-Stack Software Engineer",
     "React Developer",
     "Node.js Developer",
     "TypeScript Developer",
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
     canonical: "https://sseng.dev",
   },
   openGraph: {
-    title: "Setya Seng - Senior Software Engineer",
+    title: "Setya Seng - Full-Stack Software Engineer",
     description:
       "Full-stack software engineer specializing in React, Node.js, TypeScript, and modern web technologies. Available for new opportunities and collaborations.",
     type: "website",
@@ -68,13 +69,13 @@ export const metadata: Metadata = {
         url: "https://sseng.dev/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Setya Seng - Senior Software Engineer",
+        alt: "Setya Seng - Full-Stack Software Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Setya Seng - Senior Software Engineer",
+    title: "Setya Seng - Full-Stack Software Engineer",
     description:
       "Full-stack software engineer specializing in React, Node.js, TypeScript, and modern web technologies",
     creator: "@setoseng",
@@ -115,7 +116,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Setya Seng",
-              jobTitle: "Senior Software Engineer",
+              jobTitle: "Full-Stack Software Engineer",
               description:
                 "Full-stack software engineer specializing in React, Node.js, TypeScript, and modern web technologies",
               url: "https://sseng.dev",

@@ -168,10 +168,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
           className="text-center mb-12 sm:mb-16"
           data-animate="contact-title"
         >
-          <h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight"
-            style={{ color: "#0551FA" }}
-          >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight text-primary">
             Let&apos;s Connect
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-medium px-2">
@@ -188,18 +185,14 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
             }`}
             data-animate="contact-info"
           >
-            <h3
-              className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6"
-              style={{ color: "#0551FA" }}
-            >
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-primary">
               Get In Touch
             </h3>
             <div className="space-y-3 sm:space-y-4">
               <div className="flex items-center">
                 <Mail
-                  className="mr-3 sm:mr-4 sm:w-5 sm:h-5"
+                  className="mr-3 sm:mr-4 sm:w-5 sm:h-5 text-accent"
                   size={18}
-                  style={{ color: "#FAAE05" }}
                 />
                 <div>
                   <p className="font-medium text-gray-900 text-sm sm:text-base">
@@ -207,8 +200,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   </p>
                   <a
                     href="mailto:setoseng@gmail.com"
-                    className="hover:underline text-sm sm:text-base"
-                    style={{ color: "#0551FA" }}
+                    className="hover:underline text-sm sm:text-base text-primary"
                   >
                     setoseng@gmail.com
                   </a>
@@ -216,9 +208,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
               </div>
               <div className="flex items-center">
                 <MapPin
-                  className="mr-3 sm:mr-4 sm:w-5 sm:h-5"
+                  className="mr-3 sm:mr-4 sm:w-5 sm:h-5 text-accent"
                   size={18}
-                  style={{ color: "#FAAE05" }}
                 />
                 <div>
                   <p className="font-medium text-gray-900 text-sm sm:text-base">
@@ -238,34 +229,22 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                 <a
                   target="_blank"
                   href="https://github.com/setoseng"
-                  className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
+                  className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer hover:bg-yellow-50"
                 >
-                  <Github
-                    style={{ color: "#0551FA" }}
-                    size={18}
-                    className="sm:w-5 sm:h-5"
-                  />
+                  <Github className="sm:w-5 sm:h-5 text-primary" size={18} />
                 </a>
                 <a
                   target="_blank"
                   href="https://www.linkedin.com/in/setya-seng/"
-                  className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
+                  className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer hover:bg-yellow-50"
                 >
-                  <Linkedin
-                    style={{ color: "#0551FA" }}
-                    size={18}
-                    className="sm:w-5 sm:h-5"
-                  />
+                  <Linkedin className="sm:w-5 sm:h-5 text-primary" size={18} />
                 </a>
                 <a
                   href="mailto:setoseng@gmail.com"
-                  className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer"
+                  className="p-2 sm:p-3 rounded-lg transition-colors duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer hover:bg-yellow-50"
                 >
-                  <Mail
-                    style={{ color: "#0551FA" }}
-                    size={18}
-                    className="sm:w-5 sm:h-5"
-                  />
+                  <Mail className="sm:w-5 sm:h-5 text-primary" size={18} />
                 </a>
               </div>
             </div>
@@ -278,10 +257,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
             }`}
             data-animate="contact-form"
           >
-            <h3
-              className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6"
-              style={{ color: "#0551FA" }}
-            >
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-primary">
               Send a Message
             </h3>
 
@@ -309,10 +285,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
-                  style={
-                    { "--tw-ring-color": "#0551FA" } as React.CSSProperties
-                  }
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
                   placeholder="Your full name"
                   disabled={isSubmitting}
                 />
@@ -327,10 +300,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
-                  style={
-                    { "--tw-ring-color": "#0551FA" } as React.CSSProperties
-                  }
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
                   placeholder="your.email@example.com"
                   disabled={isSubmitting}
                 />
@@ -343,10 +313,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   name="inquiryType"
                   value={formData.inquiryType}
                   onChange={handleInputChange}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
-                  style={
-                    { "--tw-ring-color": "#0551FA" } as React.CSSProperties
-                  }
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
                   disabled={isSubmitting}
                 >
                   <option>Full-time Position</option>
@@ -367,10 +334,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   onChange={handleInputChange}
                   required
                   rows={4}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
-                  style={
-                    { "--tw-ring-color": "#0551FA" } as React.CSSProperties
-                  }
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
                   placeholder="Tell me about your project..."
                   disabled={isSubmitting}
                 ></textarea>
@@ -378,8 +342,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg transform hover:scale-105 cursor-pointer text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                style={{ backgroundColor: "#0551FA" }}
+                className="w-full text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg transform hover:scale-105 cursor-pointer text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none bg-primary"
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center">
@@ -402,16 +365,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
           }`}
           data-animate="availability"
         >
-          <h3
-            className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4"
-            style={{ color: "#0551FA" }}
-          >
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-primary">
             Current Status
           </h3>
-          <div
-            className="inline-flex items-center text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium shadow-sm text-sm sm:text-base"
-            style={{ backgroundColor: "#FAAE05" }}
-          >
+          <div className="inline-flex items-center text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium shadow-sm text-sm sm:text-base bg-accent">
             <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
             Open to New Opportunities
           </div>
