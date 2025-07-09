@@ -8,7 +8,7 @@ interface ContactSectionProps {
 interface FormData {
   name: string;
   email: string;
-  projectType: string;
+  inquiryType: string;
   message: string;
 }
 
@@ -16,7 +16,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
-    projectType: "Web Application",
+    inquiryType: "Full-time Position",
     message: "",
   });
 
@@ -113,7 +113,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
         setFormData({
           name: "",
           email: "",
-          projectType: "Web Application",
+          inquiryType: "Full-time Position",
           message: "",
         });
       } else {
@@ -310,11 +310,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
-                  Project Type
+                  Inquiry Type
                 </label>
                 <select
-                  name="projectType"
-                  value={formData.projectType}
+                  name="inquiryType"
+                  value={formData.inquiryType}
                   onChange={handleInputChange}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent outline-none bg-white text-sm sm:text-base text-gray-900"
                   style={
@@ -322,11 +322,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
                   }
                   disabled={isSubmitting}
                 >
-                  <option>Web Application</option>
-                  <option>E-commerce Platform</option>
-                  <option>React/Next.js Development</option>
-                  <option>UI/UX Design</option>
-                  <option>API Development</option>
+                  <option>Full-time Position</option>
+                  <option>Contract/Freelance</option>
+                  <option>Part-time Role</option>
+                  <option>Internship</option>
+                  <option>Consultation</option>
                   <option>Other</option>
                 </select>
               </div>
@@ -379,19 +379,20 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
             className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4"
             style={{ color: "#0551FA" }}
           >
-            Current Availability
+            Current Status
           </h3>
           <div
             className="inline-flex items-center text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium shadow-sm text-sm sm:text-base"
             style={{ backgroundColor: "#FAAE05" }}
           >
             <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-            Available for new projects
+            Open to New Opportunities
           </div>
           <p className="text-gray-600 mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base px-2">
-            I&apos;m currently accepting new freelance projects and full-time
-            opportunities. Let&apos;s discuss how I can help bring your vision
-            to life.
+            I&apos;m open to discussing exciting career opportunities and
+            interesting projects. I&apos;m passionate about building innovative
+            web applications and would love to hear about potential
+            collaborations.
           </p>
         </div>
       </div>
