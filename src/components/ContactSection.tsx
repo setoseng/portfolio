@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, MapPin, Loader2 } from "lucide-react";
 
 interface ContactSectionProps {
@@ -25,12 +25,14 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
   // Load reCAPTCHA v3 script early to analyze user behavior
   useEffect(() => {
     // Check if script is already loaded
-    if (typeof window !== "undefined" && (window as any).grecaptcha) {
+    if (
+      typeof window !== "undefined" &&
+      (window as unknown as { grecaptcha?: unknown }).grecaptcha
+    ) {
       return;
     }
 
@@ -50,16 +52,39 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
   // Execute reCAPTCHA v3
   const executeRecaptcha = async (): Promise<string> => {
     return new Promise((resolve, reject) => {
-      if (typeof window !== "undefined" && (window as any).grecaptcha) {
-        (window as any).grecaptcha.ready(() => {
-          (window as any).grecaptcha
-            .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, {
+      if (
+        typeof window !== "undefined" &&
+        (window as unknown as { grecaptcha?: unknown }).grecaptcha
+      ) {
+        (
+          window as unknown as {
+            grecaptcha: {
+              ready: (callback: () => void) => void;
+              execute: (
+                siteKey: string,
+                options: { action: string }
+              ) => Promise<string>;
+            };
+          }
+        ).grecaptcha.ready(() => {
+          (
+            window as unknown as {
+              grecaptcha: {
+                ready: (callback: () => void) => void;
+                execute: (
+                  siteKey: string,
+                  options: { action: string }
+                ) => Promise<string>;
+              };
+            }
+          ).grecaptcha
+            .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "", {
               action: "contact_form",
             })
             .then((token: string) => {
               resolve(token);
             })
-            .catch((error: any) => {
+            .catch((error: unknown) => {
               reject(error);
             });
         });

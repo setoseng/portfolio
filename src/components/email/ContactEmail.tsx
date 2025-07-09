@@ -6,7 +6,6 @@ import {
   Section,
   Heading,
   Text,
-  Hr,
   Row,
   Column,
 } from "@react-email/components";
@@ -26,12 +25,7 @@ export const ContactEmail: React.FC<ContactEmailProps> = ({
 }) => {
   return (
     <Html>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <Head />
       <Body style={main}>
         <Container style={container}>
           {/* Header with gradient background */}
