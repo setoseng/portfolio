@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, ExternalLink, Award } from "lucide-react";
+import ProjectCard from "./ProjectCard";
 
 interface ProjectsSectionProps {
   isVisible: Record<string, boolean>;
@@ -7,7 +7,6 @@ interface ProjectsSectionProps {
     title: string;
     description: string;
     tech: string[];
-    github: string;
     demo: string;
     featured: boolean;
     challenges: string;
@@ -36,103 +35,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           and best practices
         </p>
       </div>
-      <div className="grid gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {projects.map((project, index) => (
-          <div
+          <ProjectCard
             key={index}
-            className={`bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:scale-[1.01] ${
-              isVisible[`project-${index}`]
-                ? "translate-y-0 opacity-100"
-                : "translate-y-10 opacity-0"
-            }`}
-            data-animate={`project-${index}`}
-          >
-            <div
-              className={`grid ${
-                project.featured ? "lg:grid-cols-2" : "grid-cols-1"
-              } gap-0`}
-            >
-              {/* Project Visual */}
-              <div
-                className="relative h-48 sm:h-64 lg:h-80 flex items-center justify-center"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #0551FA 0%, #0441D1 100%)",
-                }}
-              >
-                {project.featured && (
-                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
-                    <span
-                      className="text-blue-900 px-2 sm:px-3 py-1 rounded-full text-xs font-bold flex items-center"
-                      style={{ backgroundColor: "#FAAE05" }}
-                    >
-                      <Award size={10} className="mr-1 sm:w-3 sm:h-3" />
-                      Featured
-                    </span>
-                  </div>
-                )}
-                <div className="text-4xl sm:text-6xl text-white/30">🚀</div>
-              </div>
-              {/* Project Content */}
-              <div className="p-4 sm:p-6 lg:p-8">
-                <h3
-                  className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4"
-                  style={{ color: "#0551FA" }}
-                >
-                  {project.title}
-                </h3>
-                <p className="text-gray-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
-                  {project.description}
-                </p>
-                <div className="mb-3 sm:mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">
-                    Key Challenge:
-                  </h4>
-                  <p className="text-gray-600 text-xs sm:text-sm">
-                    {project.challenges}
-                  </p>
-                </div>
-                <div className="mb-4 sm:mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">
-                    Outcome:
-                  </h4>
-                  <p
-                    className="text-xs sm:text-sm font-medium"
-                    style={{ color: "#FAAE05" }}
-                  >
-                    {project.outcome}
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-white"
-                      style={{ backgroundColor: "#0551FA" }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0">
-                  <a
-                    href={project.github}
-                    className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium text-sm sm:text-base"
-                  >
-                    <Github size={16} className="mr-2 sm:w-4 sm:h-4" />
-                    View Code
-                  </a>
-                  <a
-                    href={project.demo}
-                    className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium text-sm sm:text-base"
-                  >
-                    <ExternalLink size={16} className="mr-2 sm:w-4 sm:h-4" />
-                    Live Demo
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+            project={project}
+            index={index}
+            isVisible={isVisible[`project-${index}`]}
+          />
         ))}
       </div>
     </div>

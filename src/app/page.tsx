@@ -117,14 +117,13 @@ export default function Home() {
       tech: [
         "React",
         "Remix",
-        "AWS",
+        "GraphQL",
         "Klaviyo",
         "Google Analytics",
         "Meta Ads",
       ],
-      github: "#",
       demo: "https://scrupleshaircare.com",
-      featured: true,
+      featured: false,
       challenges:
         "Optimizing page load times and integrating multiple third-party analytics platforms",
       outcome: "Boosted engagement and conversion rates by 18%",
@@ -133,10 +132,9 @@ export default function Home() {
       title: "E-commerce Education Platform",
       description:
         "Built an e-commerce education platform using Next.js with secure Stripe payment integration and a highly optimized user experience, increasing ticket sales for educational content.",
-      tech: ["Next.js", "Stripe", "React", "TypeScript", "AWS"],
-      github: "#",
+      tech: ["Next.js", "Stripe", "React", "TypeScript"],
       demo: "https://education.scrupleshaircare.com",
-      featured: true,
+      featured: false,
       challenges:
         "Implementing secure payment processing and optimizing user experience for educational content",
       outcome: "Significantly increased ticket sales and user engagement",
@@ -145,26 +143,12 @@ export default function Home() {
       title: "Donut World Online Ordering Platform",
       description:
         "Developed and deployed an online ordering platform using React, Node.js, and AWS EC2, driving a significant increase in transactions and revenue. Created a lightweight in-house task management app for internal use.",
-      tech: ["React", "Node.js", "AWS EC2", "JavaScript", "Express"],
-      github: "#",
-      demo: "https://donutworld.net",
-      featured: true,
+      tech: ["React", "AWS", "JavaScript"],
+      demo: "https://symphonious-smakager-fb538f.netlify.app",
+      featured: false,
       challenges:
         "Building a user-friendly ordering system and internal task management tools",
       outcome: "Significant increase in transactions and revenue",
-    },
-    {
-      title: "RiverKids Pediatrics Real-time Applications",
-      description:
-        "Built and maintained real-time applications for therapists using React Native, Redux, and Socket.IO, improving patient management efficiency. Developed new features and fixed bugs for in-house web applications.",
-      tech: ["React Native", "Redux", "Socket.IO", "JavaScript", "Node.js"],
-      github: "#",
-      demo: "#",
-      featured: false,
-      challenges:
-        "Implementing real-time communication and patient management features",
-      outcome:
-        "Improved patient management efficiency and streamlined operations",
     },
   ];
 

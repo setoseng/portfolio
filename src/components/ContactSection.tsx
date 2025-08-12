@@ -356,29 +356,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isVisible }) => {
             </form>
           </div>
         </div>
-        {/* Availability */}
-        <div
-          className={`bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg text-center transition-all duration-1000 delay-500 ${
-            isVisible["availability"]
-              ? "translate-y-0 opacity-100"
-              : "translate-y-10 opacity-0"
-          }`}
-          data-animate="availability"
-        >
-          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-primary">
-            Current Status
-          </h3>
-          <div className="inline-flex items-center text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium shadow-sm text-sm sm:text-base bg-accent">
-            <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-            Open to New Opportunities
-          </div>
-          <p className="text-gray-600 mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base px-2">
-            I&apos;m open to discussing exciting career opportunities and
-            interesting projects. I&apos;m passionate about building innovative
-            web applications and would love to hear about potential
-            collaborations.
-          </p>
-        </div>
       </div>
     </section>
   );

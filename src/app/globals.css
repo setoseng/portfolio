@@ -99,9 +99,9 @@ h6 {
     "Helvetica Neue",
     Arial,
     sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.025em;
+  margin: 0;
 }
 
 h1 {
