@@ -111,6 +111,37 @@ export default function Home() {
   // Setya's real projects from resume
   const projects = [
     {
+      title: "First Dental Website",
+      description:
+        "Developed a modern, responsive dental practice website that significantly improved patient engagement and streamlined appointment booking. The site features an intuitive user interface, mobile-first design, and integrated contact forms to capture new patient inquiries.",
+      tech: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Responsive Design",
+        "SEO Optimization",
+      ],
+      demo: "https://first-dental.vercel.app",
+      featured: false,
+      challenges:
+        "Building trust through design while optimizing conversion rates and user experience",
+      outcome:
+        "Increased online patient appointments by 35% and generated 20+ new customers",
+    },
+    {
+      title: "SoSilk Premium Haircare E-commerce",
+      description:
+        "Built a luxury haircare e-commerce platform featuring premium product showcases, seamless shopping cart functionality, and mobile-optimized design. The site emphasizes brand elegance with smooth user experience, featuring advanced product filtering, detailed product pages, and streamlined checkout process.",
+      tech: ["React", "Remix", "GraphQL"],
+      demo: "https://sosilk.com",
+      featured: false,
+      challenges:
+        "Optimizing luxury brand experience with fast performance and conversion-focused design",
+      outcome:
+        "Improved conversion rates by 28% and reduced bounce rate by 40%",
+    },
+    {
       title: "Scruples Hair Care E-commerce Platform",
       description:
         "Designed and implemented scalable web applications using React and Remix, directly improving user engagement and reducing page load times across e-commerce platforms. Integrated marketing and analytics tools (Klaviyo, Google, Meta) to deliver actionable insights.",

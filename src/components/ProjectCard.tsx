@@ -23,6 +23,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   // Function to get the appropriate screenshot for each project
   const getProjectScreenshot = (title: string): string | null => {
     const screenshotMap: Record<string, string> = {
+      "First Dental Website": "/project-screenshots/first-dental.png",
+      "SoSilk Premium Haircare E-commerce": "/project-screenshots/sosilk.png",
       "Scruples Hair Care E-commerce Platform":
         "/project-screenshots/scruples-haircare.png",
       "E-commerce Education Platform":
@@ -36,7 +38,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div
-      className={`bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02] ${
+      className={`bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02] flex flex-col h-full ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
       data-animate={`project-${index}`}
@@ -66,6 +68,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             src={getProjectScreenshot(project.title)!}
             alt={`${project.title} screenshot`}
             className="w-full h-full object-cover object-center"
+            loading="lazy"
+            decoding="async"
           />
         )}
         {!getProjectScreenshot(project.title) && (
@@ -74,14 +78,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* Project Content */}
-      <div className="p-4 sm:p-6">
+      <div className="p-4 sm:p-6 flex flex-col flex-1 gap-2">
         <h3
-          className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4"
+          className="text-xl sm:text-2xl font-bold"
           style={{ color: "#0551FA" }}
         >
           {project.title}
         </h3>
-        <p className="text-gray-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
+        <p className="text-gray-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base break-words">
           {project.description}
         </p>
 
@@ -89,7 +93,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <h4 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">
             Key Challenge:
           </h4>
-          <p className="text-gray-600 text-xs sm:text-sm">
+          <p className="text-gray-600 text-xs sm:text-sm break-words">
             {project.challenges}
           </p>
         </div>
@@ -98,10 +102,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <h4 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">
             Outcome:
           </h4>
-          <p
-            className="text-xs sm:text-sm font-medium"
-            style={{ color: "#FAAE05" }}
-          >
+          <p className="text-xs sm:text-sm font-medium text-gray-600 break-words">
             {project.outcome}
           </p>
         </div>
@@ -110,18 +111,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {project.tech.map((tech, i) => (
             <span
               key={i}
-              className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-white"
-              style={{ backgroundColor: "#0551FA" }}
+              className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-white break-words bg-primary"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-auto">
           <a
             href={project.demo}
-            className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium text-sm sm:text-base px-4 py-2 rounded-lg hover:bg-gray-50"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-full bg-accent sm:w-auto text-white hover:scale-105 transition duration-300 font-medium text-sm sm:text-base px-4 py-2 rounded-lg"
           >
             <ExternalLink size={16} className="mr-2 sm:w-4 sm:h-4" />
             Live Demo
